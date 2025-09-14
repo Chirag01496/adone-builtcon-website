@@ -40,3 +40,26 @@ body {
 .animate-fadeIn {
   animation: fadeIn 0.3s ease-out;
 }
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.swiper-slide .slide-image {
+  transition: all 0.4s ease;
+  transform: scale(0.85);
+  filter: brightness(0.6) blur(4px);
+}
+
+.swiper-slide-active .slide-image {
+  transform: scale(1.05);
+  filter: brightness(1) blur(0);
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
+}
+
+.swiper-slide-next .slide-image,
+.swiper-slide-prev .slide-image {
+  transform: scale(0.9);
+  filter: brightness(0.75) blur(8px);
+}
