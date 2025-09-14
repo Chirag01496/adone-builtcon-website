@@ -62,8 +62,9 @@ export default function PortfolioPage() {
 						{project.videos && (
 							<VideoComponent
 								{...{
+									key: "project-video",
 									videoSrc: project.videos[0],
-									height: "180px",
+									height: 180,
 								}}
 							/>
 						)}
@@ -145,9 +146,10 @@ export default function PortfolioPage() {
 										key={idx}
 										className="overflow-hidden rounded-lg">
 										<VideoComponent
+											key={"video-grid"}
 											videoSrc={img}
 											className="w-full h-120 object-cover transition-transform duration-500 hover:scale-110"
-											height="480px"
+											height={480}
 										/>
 									</div>
 								)

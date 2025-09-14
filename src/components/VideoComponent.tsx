@@ -5,10 +5,14 @@ import { useState } from "react";
 interface VideoModalProps {
 	videoSrc: string;
 	className?: string;
-	height: string;
+	height: number;
 }
 
-export default function VideoComponent({ videoSrc, className, height }: VideoModalProps) {
+export default function VideoComponent({
+	videoSrc,
+	className,
+	height,
+}: VideoModalProps) {
 	const [isOpen, setIsOpen] = useState(false);
 
 	return (
@@ -16,7 +20,8 @@ export default function VideoComponent({ videoSrc, className, height }: VideoMod
 			{/* Video Preview as Thumbnail */}
 			<div
 				onClick={() => setIsOpen(true)}
-				className={`cursor-pointer relative w-[320px] h-[${height}] group ${className}`}>
+				className={`cursor-pointer relative w-[320px] group ${className}`}
+				style={{ height: `${height}px` }}>
 				<video
 					src={videoSrc}
 					muted
