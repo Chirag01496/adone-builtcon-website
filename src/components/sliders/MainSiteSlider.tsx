@@ -1,8 +1,8 @@
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Autoplay } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
 import Image from "next/image";
 
 const images = [
@@ -35,27 +35,19 @@ const images = [
 
 export default function MainSiteSlider() {
 	return (
-		<div id="#" className="w-full max-w-6xl mx-auto pt-20 pb-10">
+		<div className="w-full mx-auto pt-20 pb-10 px-2 bg-black">
 			<Swiper
-				modules={[EffectCoverflow, Autoplay]}
-				effect="coverflow"
-				grabCursor
-				centeredSlides
-				slidesPerView="auto"
+				modules={[Autoplay, Pagination]}
+				slidesPerView={1}
 				loop
 				autoplay={{ delay: 2500 }}
-				coverflowEffect={{
-					rotate: 0,
-					stretch: 0,
-					depth: 200,
-					modifier: 1.5,
-					slideShadows: false,
+				pagination={{
+					el: ".custom-pagination",
+					clickable: true,
 				}}
-				className={`h-[500px]`}>
+				className="h-[500px] w-full">
 				{images.map((group, idx) => (
-					<SwiperSlide
-						key={idx}
-						className="!w-[80vw] !h-[50vh] md:!w-[70vw] md:!h-[55vh]">
+					<SwiperSlide key={idx} className="w-full h-full">
 						<div className="relative w-full h-full flex rounded-2xl overflow-hidden shadow-xl">
 							{group.slides.map((src, i) => (
 								<div key={i} className="relative flex-1 h-full">
@@ -63,7 +55,7 @@ export default function MainSiteSlider() {
 										src={src}
 										alt={`Slide ${idx + 1} image ${i + 1}`}
 										fill
-										className={`object-cover slide-image`}
+										className="object-cover"
 									/>
 								</div>
 							))}
@@ -71,6 +63,10 @@ export default function MainSiteSlider() {
 					</SwiperSlide>
 				))}
 			</Swiper>
+
+			{/* Pagination dots placed OUTSIDE images */}
+			<div className="custom-pagination mt-6 flex justify-center"></div>
+
 		</div>
 	);
 }
