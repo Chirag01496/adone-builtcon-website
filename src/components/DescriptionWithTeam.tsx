@@ -31,6 +31,7 @@ export default function DescriptionWithTeam({
 		{
 			name: "Ar. Supriya Mehta",
 			title: "Principal Architect",
+			image: "/images/main_2.jpg",
 			description:
 				"As Principal Architect, Ar. Supriya Mehta leads the creative and design development process at Adone Builtcon. She specializes in interior design and spatial planning, bringing elegance, functionality, and human-centered design into every project. Her refined design sensibility, attention to detail, and passion for creating meaningful spaces ensure that each project is both timeless and client-focused.",
 		},

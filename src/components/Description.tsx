@@ -35,7 +35,7 @@ export default function Description() {
 		<section
 			ref={ref}
 			id="about"
-			className="relative flex flex-col items-center px-6 md:px-20 py-24 md:py-32 overflow-hidden">
+			className="relative flex flex-col items-center px-6 md:px-20 py-12 overflow-hidden">
 			{/* Animated gradient background */}
 			<motion.div
 				className="absolute inset-0 bg-gradient-to-b from-white via-gray-50 to-gray-100"
