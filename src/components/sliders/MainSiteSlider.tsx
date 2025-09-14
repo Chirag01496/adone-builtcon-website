@@ -4,7 +4,6 @@ import { EffectCoverflow, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import Image from "next/image";
-import styles from "./card-slider.module.css";
 
 const images = [
 	{ slides: ["/images/mainSite/img_1.png"] },
@@ -52,7 +51,7 @@ export default function MainSiteSlider() {
 					modifier: 1.5,
 					slideShadows: false,
 				}}
-				className={`h-[500px] ${styles.mainSlider}`}>
+				className={`h-[500px]`}>
 				{images.map((group, idx) => (
 					<SwiperSlide
 						key={idx}
